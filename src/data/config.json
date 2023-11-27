@@ -1,0 +1,15 @@
+{
+    "SCREEN":[{
+        "WIDTH": 600,
+        "HEIGHT": 800
+    }],
+    "Menu":{
+        "COIN": 0,
+        "SCORE": 0,
+        "LIVES": 3,
+        "TOP_SCORE": 0,
+        "CURRENT_TIME": 0.0,
+        "MARIO_DEAD": "False",
+        "CAMERA_START_X": 0
+    }
+}
