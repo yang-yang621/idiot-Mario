@@ -1,13 +1,15 @@
 import sys
 import pygame as pg
-from data.control import Control
-
+import data.control
+from data.menu import Menu
+import data.load_config
 
 def main():
-    prog = Control("main Capture")
+    prog = data.control.Control("main Capture")
     state_dict = {
-        "main menu"
+        "main menu": Menu()
     }
+    prog.setup(state_dict,"main menu")
     prog.run()
 
 

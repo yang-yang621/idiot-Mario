@@ -1,4 +1,4 @@
-from pandas import read_json
+import json
 import pygame as pg
 import os
 
@@ -21,16 +21,18 @@ def load_graphics(file_path,color_key = (255,0,255)):
 def load_fonts(file_path):
     fonts = {}
     for f in os.listdir(file_path):
-        name ,ext = os.pat.splitext(f)
+        name ,ext = os.path.splitext(f)
         if ext.lower() == ".ttf":
             fonts[name] = os.path.join(file_path,f)
     return fonts
 
-config = read_json("./config.json")
-os.environ['SDL_VIDEO_CENTERED'] = 1
+f = open("./src/data/config.json", "r")
+config = f.read()
+config = json.loads(config)
+os.environ['SDL_VIDEO_CENTERED'] = '1'
 pg.init()
 pg.event.set_allowed([pg.KEYDOWN, pg.KEYUP, pg.QUIT])
-pg.display.set_caption()
+pg.display.set_caption("idiot-mario")
 screen = pg.display.set_mode((config['SCREEN'][0]["HEIGHT"],config['SCREEN'][0]['WIDTH']))
 screen_rect = screen.get_rect()
 

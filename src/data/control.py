@@ -5,7 +5,7 @@ import pygame as pg
 class Control(object):
     def __init__(self,caption):
         self.screen = pg.display.get_surface()
-        self.clock = pg.time.clock()
+        self.clock = pg.time.Clock()
         self.caption = caption
         self.fps = 60
         self.finish = False
@@ -56,22 +56,22 @@ class State(object):
     def __init__(self):
         self.start_time = 0.0
         self.current_time = 0.0
-        self.done = False
+        self.finish = False
         self.quit = False
         self.next = None
         self.previous = None
         self.presist = {}
 
-        def get_event(self, event):
-            pass
+    def get_event(self, event):
+        pass
 
-        def startup(self,current_time,presistant):
-            self.start_time = current_time
-            self.presist = presistant
+    def startup(self,current_time,presistant):
+        self.start_time = current_time
+        self.presist = presistant
 
-        def cleanup(self):
-            self.done = False
-            return self.persist
+    def cleanup(self):
+        self.done = False
+        return self.presist
 
-        def update(self, surface, keys, current_time):
-            pass
+    def update(self, surface, keys, current_time):
+        pass

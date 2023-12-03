@@ -11,5 +11,6 @@
         "CURRENT_TIME": 0.0,
         "MARIO_DEAD": "False",
         "CAMERA_START_X": 0
-    }
+    },
+    "GROUND": 740
 }
