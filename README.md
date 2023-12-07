@@ -51,7 +51,7 @@ In move(), input is handled first. direction shows where mario should be heading
 ### Major Challenges
 The major challenges of this project is getting a deep understand of how game process should work. 
 ## Example Runs
-
+![example run](screenshot.png)
 ## Testing
 
 ## Missing Features / What's Next
