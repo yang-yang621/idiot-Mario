@@ -10,7 +10,7 @@ This project aims to reproduce a mario like game. This game includes a start men
 ## Key Features
 This game has a controlable mario and two enemies that could hurt mario.
 ## Guide
-In order to run this game, `python ./main.py` needs to be run. The first scene is the menu of this game. In this scene, Press Enter can enter the next scene, which is the game scene. In this scene, there is a mario and two enemies. Press left and right to control mario move. If mario hits an enemy, It dies.
+In order to run this game, you need to get in src/ folder. And then `python ./main.py` needs to be run. The first scene is the menu of this game. In this scene, Press Enter can enter the next scene, which is the game scene. In this scene, there is a mario and two enemies. Press left and right to control mario move. If mario hits an enemy, It dies.
 ## Installation Instructions
 This project needs two dependencies, which includes in requirements.txt. These requirements could be installed by running `pip install -r requirements.txt`. 
 ## Code Review
