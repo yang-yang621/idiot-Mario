@@ -32,8 +32,11 @@ class Control(object):
 
     
     def flip_state(self):
-        pass
-
+        previous, self.state_name = self.state_name, self.state.next
+        persist = self.state.cleanup()
+        self.state = self.state_dict[self.state_name]
+        self.state.startup(self.current_time, persist)
+        self.state.previous = previous
 
     def loop(self):
         for event in pg.event.get():

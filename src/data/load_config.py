@@ -26,7 +26,7 @@ def load_fonts(file_path):
             fonts[name] = os.path.join(file_path,f)
     return fonts
 
-f = open("./src/data/config.json", "r")
+f = open("./data/config.json", "r")
 config = f.read()
 config = json.loads(config)
 os.environ['SDL_VIDEO_CENTERED'] = '1'
@@ -36,5 +36,5 @@ pg.display.set_caption("idiot-mario")
 screen = pg.display.set_mode((config['SCREEN'][0]["HEIGHT"],config['SCREEN'][0]['WIDTH']))
 screen_rect = screen.get_rect()
 
-GRAPHICS = load_graphics(os.path.join("resources","graphics"))
-FONTS = load_fonts(os.path.join("resources","fonts"))
+GRAPHICS = load_graphics(os.path.join("../resources","graphics"))
+FONTS = load_fonts(os.path.join("../resources","fonts"))

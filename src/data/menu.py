@@ -1,18 +1,20 @@
-from . import control,load_config
+from . import control,load_config, show_info
 import pygame as pg
 
 class Menu(control.State):
     def __init__(self):
         super().__init__()
+        self.next = 'game'
         self.persist = load_config.config["Menu"]
         self.game_info = load_config.config["Menu"]
         self.elements = self.setup_elements()
+        self.info = show_info.Info(self.game_info,"main menu")
     
 
     def setup_elements(self):
         level_1 = pg.transform.scale(load_config.GRAPHICS['level_1'],(
-            int(load_config.GRAPHICS['level_1'].get_rect().width * 2.5),
-            int(load_config.GRAPHICS['level_1'].get_rect().height* 2.5)
+            int(load_config.GRAPHICS['level_1'].get_rect().width * 2.7),
+            int(load_config.GRAPHICS['level_1'].get_rect().height* 2.7)
             )
         )
         backgound = level_1
@@ -58,12 +60,13 @@ class Menu(control.State):
         surface.blit(self.elements[0], self.elements[1], self.elements[1])
         surface.blit(self.elements[4].image, self.elements[4].rect)
         surface.blit(self.elements[2], self.elements[3])
-        #self.overhead_info.draw(surface)
+        self.info.draw(surface)
 
 
     def update(self,surface, keys, current_time):
         self.current_time = current_time
         self.game_info['current time'] = self.current_time
-        #self.overhead_info.update(self.game_info)
         self.elements[4].rect.y = 358
+        if keys[pg.K_RETURN]:
+            self.finish = True
         self.draw(surface)
