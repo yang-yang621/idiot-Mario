@@ -1,8 +1,8 @@
 # idiot-Mario
 
-- Student Name:
-- Github Username:
-- Semester:
+- Student Name:YANG HAN
+- Github Username:yang-yang621
+- Semester:2023 FALL
 - Course:
 
 ## Description
